@@ -1,5 +1,6 @@
 package pachet;
 
+import clase.Giraffe;
 import clase.Zoo;
 
 public class Main {

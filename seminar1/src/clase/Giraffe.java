@@ -1,6 +1,4 @@
-package pachet;
-
-import clase.Animal;
+package clase;
 
 public class Giraffe extends Animal {
 	private int inaltime;
