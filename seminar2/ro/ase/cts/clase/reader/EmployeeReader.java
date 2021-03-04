@@ -9,10 +9,19 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
 
-public class EmployeeReader {
+public class EmployeeReader extends Reader{
 	
-	public static List<Aplicant> readAngajati(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+	
+	
+	public EmployeeReader(String filename) {
+		super(filename);
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<Aplicant> readAplicants() throws FileNotFoundException {
+		
+		
+		Scanner input2 = new Scanner(new File(super.filename));//acel atribut este in parinte
 		input2.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
@@ -34,5 +43,6 @@ public class EmployeeReader {
 		return angajati;
 	}
 
+	
 
 }
