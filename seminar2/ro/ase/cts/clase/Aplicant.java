@@ -62,5 +62,19 @@ public abstract class Aplicant{
 	public void setNr_proiecte(int nr_proiecte) {
 		this.nr_proiecte = nr_proiecte;
 	}
+	public String[] getDenumireProiect() {
+		return denumireProiect;
+	}
+	public void setDenumireProiect(String[] denumireProiect) {
+		this.denumireProiect = denumireProiect;
+	}
 
+	
+	public void setDenumiriProiecte(int nr_proiecte, String [] denumireProiect) {
+		this.nr_proiecte = nr_proiecte;
+		this.denumireProiect = denumireProiect;
+		
+	}
+	
+	
 }
