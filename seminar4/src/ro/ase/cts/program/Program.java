@@ -1,5 +1,6 @@
 package ro.ase.cts.program;
 
+import ro.ase.cts.clase.Academie;
 import ro.ase.cts.clase.ManagerSpital;
 import ro.ase.cts.clase.ManagerSpitalLazy;
 
@@ -25,11 +26,20 @@ public class Program {
 		manager3.setVarsta(58);
 		manager4.setNume("Mihaela");
 		
+		//Aivanoaei Anca-> clasa Academie
+		Academie academie1=Academie.getInstance("ASE", 20000, 22.2f);
+		Academie academie2=Academie.getInstance("Militara", 35000, 78.56f);
+		
+		academie1.setDenumire("de Studii Economice");
+		academie2.setBuget(46.23f);
 		
 		System.out.println(manager1.toString());
 		System.out.println(manager2.toString());
 		System.out.println(manager3.toString());
 		System.out.println(manager4.toString());
+		
+		System.out.println(academie1.toString());
+		System.out.println(academie2.toString());
 	}
 
 }
