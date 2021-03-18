@@ -19,23 +19,21 @@ public class PupilReader extends Reader {
 	}
 
 	public List<Aplicant> readAplicants() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.filename));
-		input2.useDelimiter(",|\n");
+		Scanner input = new Scanner(new File(super.filename));
+		input.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (input.hasNext()) {
 			Elev e=new Elev();
-			super.readAplicant(e,input2);
-			int clasa = input2.nextInt();
-			String tutore = input2.next();
-			
-			
+			super.readAplicant(e,input);
+			int clasa = input.nextInt();
+			String tutore = input.next();
 			e.setClasa(clasa);
 			e.setTutore(tutore);
 			elevi.add(e);
 		}
 
-		input2.close();
+		input.close();
 		return elevi;
 	}
 

@@ -24,15 +24,15 @@ public abstract class Reader {
 		String prenume = (input.next()).toString();
 		int varsta = Integer.valueOf(input.nextInt());
 		int punctaj = Integer.valueOf(input.nextInt());
-		int nr = Integer.valueOf(input.nextInt());
-		String[] vect = new String[nr];
-		for (int i = 0; i < nr; i++)
+		int numar = Integer.valueOf(input.nextInt());
+		String[] vect = new String[numar];
+		for (int i = 0; i < numar; i++)
 			vect[i] = input.next();
 		a.setNume(nume);
 		a.setPrenume(prenume);
 		a.setVarsta(varsta);
 		a.setPunctaj(punctaj);
-		a.setDenumiriProiecte(nr, vect);
+		a.setAtributeProiecte(numar, vect);
 		
 	}
 	

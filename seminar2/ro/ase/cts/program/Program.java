@@ -19,11 +19,11 @@ public class Program {
 		
 		try {
 			listaAplicanti = UniversalReader.readAplicants(new StudentReader("studenti.txt") );
-			Proiect pr=new Proiect(80);
-			for(Aplicant angajat:listaAplicanti) {
-				System.out.println(angajat.toString());
-				System.out.println(angajat.getSumaFinantata());
-				angajat.afisareStatutProiect(pr);
+			Proiect proiect=new Proiect(80);
+			for(Aplicant aplicant:listaAplicanti) {
+				System.out.println(aplicant.toString());
+				System.out.println(aplicant.getSumaFinantata());
+				aplicant.afisareStatutProiect(proiect);
 				
 			}
 				

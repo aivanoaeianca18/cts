@@ -26,10 +26,10 @@ public class StudentReader extends Reader {
 			
 			Student s=new Student();
 			super.readAplicant(s,input);
-			int an_studii = input.nextInt();
+			int anStudii = input.nextInt();
 			String facultate = (input.next()).toString();
 			
-			s.setAn_studii(an_studii);
+			s.setAnStudii(anStudii);
 			s.setFacultate(facultate);
 			studenti.add(s);
 		}
