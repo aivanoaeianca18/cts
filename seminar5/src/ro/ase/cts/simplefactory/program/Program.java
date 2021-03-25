@@ -1,8 +1,8 @@
-package ro.ase.cts.simplefactoryprogram;
+package ro.ase.cts.simplefactory.program;
 
-import ro.ase.cts.simplefactoryclase.Jucator;
-import ro.ase.cts.simplefactoryclase.JucatorFactory;
-import ro.ase.cts.simplefactoryclase.TipJucator;
+import ro.ase.cts.simplefactory.clase.Jucator;
+import ro.ase.cts.simplefactory.clase.JucatorFactory;
+import ro.ase.cts.simplefactory.clase.TipJucator;
 
 public class Program {
 	

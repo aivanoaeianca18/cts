@@ -1,4 +1,4 @@
-package ro.ase.cts.simplefactoryclase;
+package ro.ase.cts.simplefactory.clase;
 
 public class Portar extends Jucator {
 
