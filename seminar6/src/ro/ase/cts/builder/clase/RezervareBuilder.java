@@ -1,4 +1,4 @@
-package ro.ase.builder.clase;
+package ro.ase.cts.builder.clase;
 
 public class RezervareBuilder implements BuilderAbstract{
 
