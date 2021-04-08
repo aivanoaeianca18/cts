@@ -1,6 +1,7 @@
 package ro.ase.cts.adapter.program;
 
 import ro.ase.cts.adapter.clase.AdapterBilet;
+import ro.ase.cts.adapter.clase.AdapterObiecte;
 import ro.ase.cts.adapter.clase.Bilet;
 import ro.ase.cts.adapter.clase.BiletOnline;
 
@@ -23,6 +24,9 @@ public class Main {
 		rezervaSiVindeBiletLaCasa(bilet);//exemplu-in plus
 		BiletOnline biletOnline=new AdapterBilet(41.7f);
 		rezervaSiVindeBiletOnline(biletOnline);
+		
+		AdapterObiecte adapterBilet=new AdapterObiecte(bilet);
+		rezervaSiVindeBiletOnline(adapterBilet);
 	}
 
 }
