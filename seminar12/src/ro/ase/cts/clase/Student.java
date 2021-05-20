@@ -30,7 +30,12 @@ public class Student {
     }
 
     public void adaugaNota(int nota){
-        note.add(nota);
+    	if(nota>=1 && nota<=10) {
+    		note.add(nota);
+    	}else {
+    		throw new IllegalArgumentException("Nota nu este in interval");
+    	}
+        
     }
 
     public int getNota(int index){
