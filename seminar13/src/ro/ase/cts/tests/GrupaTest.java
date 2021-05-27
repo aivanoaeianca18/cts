@@ -2,12 +2,16 @@ package ro.ase.cts.tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import ro.ase.cts.clase.Grupa;
+import ro.ase.cts.clase.Student;
 
 public class GrupaTest {
-
+	
+	
+	//right-bicep
 	@Test
 	public void testConstructorRight() {
 		Grupa grupa=new Grupa(1076);
@@ -48,5 +52,77 @@ public class GrupaTest {
 		Grupa grupa=new Grupa(1076);
 		assertNotNull(grupa.getStudenti());
 	}
+	
+	//right-bicep
+	@Test
+	public void testPromovabilitateRight() {
+		Grupa grupa=new Grupa(1076);
+		for(int i=0;i<7;i++) {
+			Student student=new Student("Anca");
+			student.adaugaNota(4);
+			student.adaugaNota(5);
+			student.adaugaNota(6);
+			grupa.adaugaStudent(student);
+		}
+		for(int i=0;i<5;i++) {
+			Student student=new Student("Bianca");
+			student.adaugaNota(10);
+			student.adaugaNota(9);
+			student.adaugaNota(8);
+			grupa.adaugaStudent(student);
+		}
+		assertEquals(0.41,grupa.getPromovabilitate(),0.05);
+	}
+	
+	@Test
+	public void testPromovabilitateBoundaryInf() {
+		Grupa grupa=new Grupa(1076);
+		for(int i=0;i<7;i++) {
+			Student student=new Student("Anca");
+			student.adaugaNota(4);
+			student.adaugaNota(5);
+			student.adaugaNota(6);
+			grupa.adaugaStudent(student);
+		}
+		for(int i=0;i<5;i++) {
+			Student student=new Student("Bianca");
+			student.adaugaNota(10);
+			student.adaugaNota(4);
+			student.adaugaNota(8);
+			grupa.adaugaStudent(student);
+		}
+		assertEquals(0,grupa.getPromovabilitate(),0.05);
+	}
+	
+	@Test
+	public void testPromovabilitateBoundarySup() {
+		Grupa grupa=new Grupa(1076);
+		for(int i=0;i<7;i++) {
+			Student student=new Student("Anca");
+			student.adaugaNota(5);
+			student.adaugaNota(5);
+			student.adaugaNota(6);
+			grupa.adaugaStudent(student);
+		}
+		for(int i=0;i<5;i++) {
+			Student student=new Student("Bianca");
+			student.adaugaNota(10);
+			student.adaugaNota(5);
+			student.adaugaNota(8);
+			grupa.adaugaStudent(student);
+		}
+		assertEquals(1,grupa.getPromovabilitate(),0.05);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testPromovabilitateErrorCond(){
+		//grupa fara studenti
+		Grupa grupa=new Grupa(1076);
+		grupa.getPromovabilitate();
+		
+	}
+	
+	
+	
 	
 }

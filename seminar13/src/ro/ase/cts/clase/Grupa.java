@@ -36,13 +36,16 @@ public class Grupa {
     }
 
     public float getPromovabilitate(){
+    	if(studenti.size()==0) {
+    		throw new IllegalArgumentException("Lista este goala");
+    	}
         int nrRestantieri=0;
         for(IStudent student:studenti){
-            if(student.areRestante()){
+            if(student.areRestante()){//referinta externa
                 nrRestantieri++;
             }
         }
-        return studenti.size()/nrRestantieri;
+        return 1-(float)nrRestantieri/studenti.size();
     }
 
 	public List<IStudent> getStudenti() {
