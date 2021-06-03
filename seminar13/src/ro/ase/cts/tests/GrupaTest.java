@@ -4,15 +4,20 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import ro.ase.cts.clase.Grupa;
 import ro.ase.cts.clase.Student;
+import ro.ase.cts.tests.categorii.TesteGetPromovabilitate;
+import ro.ase.cts.tests.categorii.TesteNormale;
+import ro.ase.cts.tests.categorii.TesteUrgente;
 
 public class GrupaTest {
 	
 	
 	//right-bicep
 	@Test
+	@Category(TesteUrgente.class)
 	public void testConstructorRight() {
 		Grupa grupa=new Grupa(1076);
 		assertEquals(1076,grupa.getNrGrupa());
@@ -26,17 +31,20 @@ public class GrupaTest {
 	}
 	
 	@Test
+	@Category(TesteUrgente.class)
 	public void testConstructorBoundarySup() {
 		Grupa grupa=new Grupa(1100);
 		assertEquals(1100,grupa.getNrGrupa());
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
+	@Category(TesteUrgente.class)
 	public void testConstructorError() {
 		Grupa grupa=new Grupa(1200);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
+	@Category(TesteNormale.class)
 	public void testConstructorErrorSub1000() {
 		Grupa grupa=new Grupa(100);
 	}
@@ -55,6 +63,8 @@ public class GrupaTest {
 	
 	//right-bicep
 	@Test
+	@Category({TesteGetPromovabilitate.class,TesteUrgente.class})
+	
 	public void testPromovabilitateRight() {
 		Grupa grupa=new Grupa(1076);
 		for(int i=0;i<7;i++) {
@@ -75,6 +85,7 @@ public class GrupaTest {
 	}
 	
 	@Test
+	@Category({TesteGetPromovabilitate.class,TesteNormale.class})
 	public void testPromovabilitateBoundaryInf() {
 		Grupa grupa=new Grupa(1076);
 		for(int i=0;i<7;i++) {
@@ -95,6 +106,7 @@ public class GrupaTest {
 	}
 	
 	@Test
+	@Category(TesteGetPromovabilitate.class)
 	public void testPromovabilitateBoundarySup() {
 		Grupa grupa=new Grupa(1076);
 		for(int i=0;i<7;i++) {
@@ -115,6 +127,7 @@ public class GrupaTest {
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
+	@Category(TesteGetPromovabilitate.class)
 	public void testPromovabilitateErrorCond(){
 		//grupa fara studenti
 		Grupa grupa=new Grupa(1076);
